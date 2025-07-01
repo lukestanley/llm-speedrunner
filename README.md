@@ -78,7 +78,7 @@ Copy [`config/secrets/default.template.yaml`](config/secrets/default.template.ya
 
 
 ## Examples
-
+Using ([AIDE: AI-Driven Exploration in the Space of Code](https://arxiv.org/abs/2406.06537)), a code agent that uses tree search.
 ### AIDE
 Run AIDE with o3-mini on the first record for 5 search iterations:
 ```bash
@@ -123,7 +123,9 @@ You can then launch an experiment for your task via `launch_scientist.py task=yo
 
 ### Custom coders
 
-Coding agents are any subclass of [`core.agent.Agent`](core/agent.py) that implements the `code` method. See the base [Coder](core/coders/base.py) and [Aider](core/coders/aider.py) agents for examples. To integrate a custom coding agent, do the following:
+Coding agents are any subclass of [`core.agent.Agent`](core/agent.py) that implements the `code` method. See the base [Coder](core/coders/base.py) and [Aider chat](core/coders/aider.py) agents for examples. Note: [Aider](https://github.com/paul-gauthier/aider) is an code agent API and CLI tool, which is unrelated to AIDE.
+
+To integrate a custom coding agent, do the following:
 
 1. Implement your custom coding agent at `coders/your_coder.py`.
 2. Add a default configuration for this agent at `config/coder/your_coder.yaml`.
